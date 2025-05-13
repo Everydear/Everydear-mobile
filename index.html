@@ -29,22 +29,21 @@
     }
     header {
       background: var(--primary);
-      /* padding 삭제, 높이만 고정 */
-      height: 40px;       /* 헤더 높이를 40px 로 고정 */
-      line-height: 40px;  /* 내부 텍스트·이미지 수직 정렬용 */
+      height: 40px;
+      line-height: 40px;
       text-align: center;
       position: relative;
     }
     .logo-img {
-      max-height: 24px;
+      max-height: 80px;   /* 로고 크기를 80px로 키움 */
       width: auto;
       vertical-align: middle;
     }
     .instagram-link {
       position: absolute;
-      top: 8px;          /* 아이콘도 위로 당기기 */
+      top: 8px;
       right: 12px;
-      font-size: 1.2rem; /* 크기 줄이기 */
+      font-size: 1.2rem;
       color: #fff;
     }
     .main-section {
@@ -84,19 +83,19 @@
       text-decoration: none;
     }
 
-    /* ── 모바일 전용 미디어쿼리 (480px 이하) ── */
+    /* 모바일 전용 (480px 이하) */
     @media (max-width: 480px) {
       header {
-        height: 32px;       /* 작은 화면일 땐 32px 로 더 축소 */
+        height: 32px;
         line-height: 32px;
       }
       .logo-img {
-        max-height: 18px;   /* 로고 높이를 더 축소 */
+        max-height: 65px;  /* 동일하게 80px 유지 */
       }
       .instagram-link {
-        top: 6px;           /* 아이콘 위치 위로 당김 */
-        right: 8px;         /* 마진도 축소 */
-        font-size: 1rem;    /* 아이콘 크기 축소 */
+        top: 6px;
+        right: 8px;
+        font-size: 1rem;
       }
     }
   </style>
