@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>에브리디어 모바일 페이지</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
   <style>
     :root {
       --primary: #84BD93;
@@ -13,7 +16,7 @@
       --bg: #ffffff;
       --text: #333;
     }
-    * {
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -25,24 +28,24 @@
       font-size: 16px;
     }
     header {
-       background: var(--primary);
-  /* padding 삭제하고 높이만 고정 */
-  height: 40px;             /* 헤더 높이를 40px 로 고정 */
-  line-height: 40px;        /* 내부 텍스트·이미지 수직 정렬용 */
-  text-align: center;
-  position: relative;
-}
+      background: var(--primary);
+      /* padding 삭제, 높이만 고정 */
+      height: 40px;       /* 헤더 높이를 40px 로 고정 */
+      line-height: 40px;  /* 내부 텍스트·이미지 수직 정렬용 */
+      text-align: center;
+      position: relative;
+    }
     .logo-img {
       max-height: 24px;
-  width: auto;
-  vertical-align: middle; 
+      width: auto;
+      vertical-align: middle;
     }
     .instagram-link {
-     position: absolute;
-  top: 8px;                 /* 아이콘도 위로 당기기 */
-  right: 12px;
-  font-size: 1.2rem;        /* 크기 줄이기 */
-  color: #fff;
+      position: absolute;
+      top: 8px;          /* 아이콘도 위로 당기기 */
+      right: 12px;
+      font-size: 1.2rem; /* 크기 줄이기 */
+      color: #fff;
     }
     .main-section {
       padding: 8px 16px;
@@ -80,19 +83,44 @@
       color: var(--primary);
       text-decoration: none;
     }
+
+    /* ── 모바일 전용 미디어쿼리 (480px 이하) ── */
+    @media (max-width: 480px) {
+      header {
+        height: 32px;       /* 작은 화면일 땐 32px 로 더 축소 */
+        line-height: 32px;
+      }
+      .logo-img {
+        max-height: 18px;   /* 로고 높이를 더 축소 */
+      }
+      .instagram-link {
+        top: 6px;           /* 아이콘 위치 위로 당김 */
+        right: 8px;         /* 마진도 축소 */
+        font-size: 1rem;    /* 아이콘 크기 축소 */
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <a href="https://www.instagram.com/everydear.official" class="instagram-link" target="_blank" aria-label="Instagram">
+    <a href="https://www.instagram.com/everydear.official"
+       class="instagram-link"
+       target="_blank"
+       aria-label="Instagram">
       <i class="fab fa-instagram"></i>
     </a>
-    <img src="logo.png" alt="EVERYDEAR 로고" class="logo-img">
+    <img src="logo.png"
+         alt="EVERYDEAR 로고"
+         class="logo-img" />
   </header>
 
   <section class="main-section">
-    <img src="mobilepage.png" alt="서비스 미리보기" class="preview-img">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header" target="_blank" class="survey-btn">
+    <img src="mobilepage.png"
+         alt="서비스 미리보기"
+         class="preview-img" />
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header"
+       target="_blank"
+       class="survey-btn">
       신청하기
     </a>
   </section>
