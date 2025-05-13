@@ -28,26 +28,28 @@
       font-size: 16px;
     }
 
-    /* 헤더: 배경 제거하고 섹션 배경과 동일하게, 로고·아이콘 일렬 배치 */
+    /* 헤더: 배경 제거, 섹션 배경과 동일, 로고·아이콘 절대 위치 */
     header {
       background: var(--bg);
       padding: 8px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: relative;
+      height: 80px;           /* 기본 헤더 높이 */
     }
     .logo-img {
       position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  max-height: 80px; /* 원하는 크기 */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 80px;       /* 원하는 로고 크기 */
+      width: auto;
     }
     .instagram-link {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 1.5rem;
-  color: var(--text);
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
     }
 
     .main-section {
@@ -88,13 +90,28 @@
       color: var(--primary);
       text-decoration: none;
     }
+
+    /* 모바일 전용 (480px 이하) */
+    @media (max-width: 480px) {
+      header {
+        height: 60px;       /* 모바일 헤더 높이 */
+      }
+      .logo-img {
+        max-height: 42px;   /* 헤더 높이의 70% */
+      }
+      .instagram-link {
+        top: 8px;
+        right: 12px;
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png"
          alt="EVERYDEAR 로고"
-         class="logo-img">
+         class="logo-img" />
     <a href="https://www.instagram.com/everydear.official"
        class="instagram-link"
        target="_blank"
@@ -106,7 +123,7 @@
   <section class="main-section">
     <img src="mobilepage.png"
          alt="서비스 미리보기"
-         class="preview-img">
+         class="preview-img" />
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header"
        target="_blank"
        class="survey-btn">
