@@ -25,21 +25,24 @@
       font-size: 16px;
     }
     header {
-      background: var(--primary);
-      padding: 1px 12px;
-      text-align: center;
-      position: relative;
-    }
+       background: var(--primary);
+  /* padding 삭제하고 높이만 고정 */
+  height: 40px;             /* 헤더 높이를 40px 로 고정 */
+  line-height: 40px;        /* 내부 텍스트·이미지 수직 정렬용 */
+  text-align: center;
+  position: relative;
+}
     .logo-img {
-      max-width: 40px;
-      height: auto;
+      max-height: 24px;
+  width: auto;
+  vertical-align: middle; 
     }
     .instagram-link {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      font-size: 1.4rem;
-      color: #fff;
+     position: absolute;
+  top: 8px;                 /* 아이콘도 위로 당기기 */
+  right: 12px;
+  font-size: 1.2rem;        /* 크기 줄이기 */
+  color: #fff;
     }
     .main-section {
       padding: 8px 16px;
