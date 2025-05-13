@@ -27,26 +27,19 @@
       color: var(--text);
       font-size: 16px;
     }
-
-    /* 헤더: 배경 제거, 섹션 배경과 동일, 로고·아이콘 절대 위치 */
+    /* 헤더: 로고 왼쪽, 아이콘 오른쪽 */
     header {
       background: var(--bg);
-      padding: 8px 16px;
-      position: relative;
-      height: 80px;           /* 기본 헤더 높이 */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
     }
     .logo-img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-height: 80px;       /* 원하는 로고 크기 */
+      max-height: 80px;  /* 로고 크기 원하는 만큼 조절 */
       width: auto;
     }
     .instagram-link {
-      position: absolute;
-      top: 12px;
-      right: 16px;
       font-size: 1.5rem;
       color: var(--text);
       text-decoration: none;
@@ -89,21 +82,6 @@
     footer a {
       color: var(--primary);
       text-decoration: none;
-    }
-
-    /* 모바일 전용 (480px 이하) */
-    @media (max-width: 480px) {
-      header {
-        height: 60px;       /* 모바일 헤더 높이 */
-      }
-      .logo-img {
-        max-height: 56px;   /* 헤더 높이의 70% */
-      }
-      .instagram-link {
-        top: 8px;
-        right: 12px;
-        font-size: 1.2rem;
-      }
     }
   </style>
 </head>
