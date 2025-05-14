@@ -47,8 +47,12 @@
     }
 
     .img-section {
-      text-align: center;
-      padding: 0px 0px;
+  min-height: 100vh;  /* 화면 높이만큼 섹션을 차지함 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
     }
 
     .fade-img {
@@ -56,22 +60,30 @@
       max-width: 480px;
       height: auto;
       border-radius: 10px;
-      margin: 0px auto;
+      margin: 20px auto;
       display: block;
     }
 
-    .survey-btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: var(--accent);
-      color: #fff;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      margin: 20px auto;
-      transition: background 0.3s;
-    }
+.last-section {
+  min-height: auto;
+  display: block;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+.survey-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 24px;  /* 이미지와 버튼 사이 여백 */
+  transition: background 0.3s;
+}
+    
     .survey-btn:hover {
       background: #333;
     }
@@ -109,14 +121,10 @@
   <section class="img-section" data-aos="fade-up">
     <img src="page4.png" alt="스크롤 이미지 4" class="fade-img" />
   </section>
-  <section class="img-section" data-aos="fade-up">
-    <img src="page5.png" alt="스크롤 이미지 5" class="fade-img" />
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header"
-       target="_blank"
-       class="survey-btn">
-      첫 회 무료 체험하기
-    </a>
-  </section>
+  <section class="img-section last-section" data-aos="fade-up">
+  <img src="page5.png" alt="5" class="fade-img" />
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header" class="survey-btn">첫 회 무료 체험하기</a>
+</section>
 
   <footer>
     &copy; 2025 에브리디어<br>
