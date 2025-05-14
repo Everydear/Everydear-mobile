@@ -9,6 +9,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous"
         referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       --primary: #84BD93;
@@ -28,7 +29,6 @@
       font-size: 16px;
     }
 
-    /* 헤더: 항상 왼쪽에 로고, 오른쪽에 인스타 아이콘 */
     header {
       background: var(--bg);
       display: flex;
@@ -37,7 +37,7 @@
       padding: 8px 16px;
     }
     .logo-img {
-      max-height: 80px;  /* 원하시는 만큼 조절 */
+      max-height: 80px;
       width: auto;
     }
     .instagram-link {
@@ -46,18 +46,20 @@
       text-decoration: none;
     }
 
-    .main-section {
-      padding: 8px 16px;
+    .img-section {
       text-align: center;
+      padding: 0px 0px;
     }
-    .preview-img {
+
+    .fade-img {
       width: 100%;
       max-width: 480px;
       height: auto;
       border-radius: 10px;
-      margin: 20px auto;
+      margin: 0px auto;
       display: block;
     }
+
     .survey-btn {
       display: inline-block;
       padding: 14px 32px;
@@ -67,7 +69,7 @@
       font-size: 1.1rem;
       font-weight: 600;
       text-decoration: none;
-      margin-top: 4px;
+      margin: 20px auto;
       transition: background 0.3s;
     }
     .survey-btn:hover {
@@ -88,25 +90,31 @@
 </head>
 <body>
   <header>
-    <img src="logo.png"
-         alt="EVERYDEAR 로고"
-         class="logo-img" />
-    <a href="https://www.instagram.com/everydear.official"
-       class="instagram-link"
-       target="_blank"
-       aria-label="Instagram">
+    <img src="logo.png" alt="EVERYDEAR 로고" class="logo-img" />
+    <a href="https://www.instagram.com/everydear.official" class="instagram-link" target="_blank" aria-label="Instagram">
       <i class="fab fa-instagram"></i>
     </a>
   </header>
 
-  <section class="main-section">
-    <img src="mobilepage.png"
-         alt="서비스 미리보기"
-         class="preview-img" />
+  <!-- 이미지 섹션들 -->
+  <section class="img-section" data-aos="fade-up">
+    <img src="page1.png" alt="스크롤 이미지 1" class="fade-img" />
+  </section>
+  <section class="img-section" data-aos="fade-up">
+    <img src="page2.png" alt="스크롤 이미지 2" class="fade-img" />
+  </section>
+  <section class="img-section" data-aos="fade-up">
+    <img src="page3.png" alt="스크롤 이미지 3" class="fade-img" />
+  </section>
+  <section class="img-section" data-aos="fade-up">
+    <img src="page4.png" alt="스크롤 이미지 4" class="fade-img" />
+  </section>
+  <section class="img-section" data-aos="fade-up">
+    <img src="page5.png" alt="스크롤 이미지 5" class="fade-img" />
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header"
        target="_blank"
        class="survey-btn">
-      신청하기
+      첫 회 무료 체험하기
     </a>
   </section>
 
@@ -114,5 +122,13 @@
     &copy; 2025 에브리디어<br>
     Contact: <a href="mailto:gwg03017@naver.com">gwg03017@naver.com</a>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>
