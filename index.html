@@ -9,7 +9,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous"
         referrerpolicy="no-referrer" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       --primary: #84BD93;
@@ -44,53 +43,48 @@
       font-size: 1.5rem;
       color: var(--text);
       text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
-.main-section {
-  padding: 32px 0;
-  text-align: center;
-}
+    .main-section {
+      padding: 32px 0;
+      text-align: center;
+    }
 
-.main-img {
-  width: 100%;
-  max-width: 480px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  margin: 20px auto;
-  display: block;
-}
-    .fade-img {
+    .main-img {
       width: 100%;
       max-width: 480px;
-      height: auto;
       border-radius: 10px;
-      margin: 10px auto;
-      display: block; 
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      margin: 20px auto;
+      display: block;
     }
 
-.survey-btn {
-  display: inline-block;
-  padding: 14px 32px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 24px;  /* 이미지와 버튼 사이 여백 */
-  transition: background 0.3s;
-}
-    
+    .survey-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 24px;
+      transition: background 0.3s;
+    }
+
     .survey-btn:hover {
       background: #333;
     }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
       color: #777;
       padding: 24px 16px;
     }
+
     footer a {
       color: var(--primary);
       text-decoration: none;
@@ -105,23 +99,14 @@
     </a>
   </header>
 
-  <!-- 이미지 섹션들 -->
-<section class="main-section">
-  <img src="sero.png" alt="스크롤 이미지 1" class="main-img" />
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header">신청하기</a>
-</section>
-  
+  <section class="main-section">
+    <img src="sero.png" alt="스크롤 이미지 1" class="main-img" />
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header" class="survey-btn">신청하기</a>
+  </section>
+
   <footer>
     &copy; 2025 에브리디어<br>
     Contact: <a href="mailto:gwg03017@naver.com">gwg03017@naver.com</a>
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-  </script>
 </body>
 </html>
