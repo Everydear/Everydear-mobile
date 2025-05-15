@@ -29,12 +29,17 @@
       font-size: 16px;
     }
 
-  header {
-  padding: 4px 12px;  /* 상하 여백 축소 */
-}
-.logo-img {
-  max-height: 60px;   /* 로고 크기도 살짝 줄이면 더 자연스러움 */
-}
+    header {
+      background: var(--bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+    }
+    .logo-img {
+      max-height: 80px;
+      width: auto;
+    }
     .instagram-link {
       font-size: 1.5rem;
       color: var(--text);
@@ -47,7 +52,6 @@
 }
 
 .main-img {
-    padding: 16px 0;  /* 상하 간격 32px → 16px로 축소 */
   width: 100%;
   max-width: 480px;
   border-radius: 10px;
@@ -64,39 +68,7 @@
       display: block; 
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
-.btn-section {
-  text-align: center;
-  padding: 24px 0 48px;
-}
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #777;
-      padding: 24px 16px;
-    }
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="logo.png" alt="EVERYDEAR 로고" class="logo-img" />
-    <a href="https://www.instagram.com/everydear.official" class="instagram-link" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </header>
 
-  <!-- 이미지 섹션들 -->
-<section class="main-section" data-aos="fade-up">
-  <img src="sero.png" alt="스크롤 이미지 1" class="fade-img" />
-</section>
-
-<!-- 버튼 섹션 -->
-<section class="btn-section" data-aos="fade-up">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header" class="survey-btn">신청하기</a>
-</section>
 .survey-btn {
   display: inline-block;
   padding: 14px 32px;
@@ -119,6 +91,26 @@
       color: #777;
       padding: 24px 16px;
     }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="EVERYDEAR 로고" class="logo-img" />
+    <a href="https://www.instagram.com/everydear.official" class="instagram-link" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </header>
+
+  <!-- 이미지 섹션들 -->
+<section class="main-section">
+  <img src="sero.png" alt="스크롤 이미지 1" class="main-img" />
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header" class="survey-btn">신청하기</a>
+</section>
+  
   <footer>
     &copy; 2025 에브리디어<br>
     Contact: <a href="mailto:gwg03017@naver.com">gwg03017@naver.com</a>
