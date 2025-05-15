@@ -47,7 +47,7 @@
     }
 
  .img-section {
-  padding: 32px 0; /* 상하 여백만 주고 간격 조정 */
+  padding:100%; /* 상하 여백만 주고 간격 조정 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,40 +64,22 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
 
-.last-section {
-  min-height: 50%;
-  padding: 32px 0;
-  text-align: center;
-}
-
 .survey-btn {
   display: inline-block;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
+  padding: 14px 32px;
+  background: var(--accent);
   color: #fff;
-  padding: 14px 40px;
   border-radius: 50px;
-  background: linear-gradient(
-    270deg,
-    rgba(78, 84, 200, 0.9),
-    rgba(78, 84, 200, 0.6),
-    rgba(78, 84, 200, 0.3)
-  );
-  background-size: 300% 300%;
-  background-position: 1% 50%;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-decoration: none;
-  border: 1px solid rgba(78, 84, 200, 0.3);
-  transition: all 0.6s ease-out;
-  margin-top: 24px;
+  margin-top: 24px;  /* 이미지와 버튼 사이 여백 */
+  transition: background 0.3s;
 }
-
-.survey-btn:hover {
-  background-position: 99% 50%;
-  border: 1px solid transparent;
-  color: #fff;
-}
+    
+    .survey-btn:hover {
+      background: #333;
+    }
     footer {
       text-align: center;
       font-size: 0.85rem;
@@ -120,19 +102,7 @@
 
   <!-- 이미지 섹션들 -->
   <section class="img-section" data-aos="fade-up">
-    <img src="page1.png" alt="스크롤 이미지 1" class="fade-img" />
-  </section>
-  <section class="img-section" data-aos="fade-up">
-    <img src="page2.png" alt="스크롤 이미지 2" class="fade-img" />
-  </section>
-  <section class="img-section" data-aos="fade-up">
-    <img src="page3.png" alt="스크롤 이미지 3" class="fade-img" />
-  </section>
-  <section class="img-section" data-aos="fade-up">
-    <img src="page4.png" alt="스크롤 이미지 4" class="fade-img" />
-  </section>
-  <section class="img-section last-section" data-aos="fade-up">
-  <img src="page5.png" alt="5" class="fade-img" />
+    <img src="sero.png" alt="스크롤 이미지 1" class="fade-img" />
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header" class="survey-btn">신청하기</a>
 </section>
 
