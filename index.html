@@ -147,7 +147,7 @@
       <br>
       <input type="password" id="password" placeholder="비밀번호" />
       <br>
-      <button onclick="signup()">회원가입</button>
+      <button onclick="location.href='signup.html'">회원가입</button>
       <button onclick="login()">로그인</button>
     </div>
   </section>
@@ -157,56 +157,43 @@
     Contact: <a href="mailto:gwg03017@naver.com">gwg03017@naver.com</a>
   </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 800, once: true });
-</script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 
-<!-- 🔹 Firebase 모듈 스크립트 추가 -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
+  <!-- 🔹 Firebase 로그인 전용 모듈 스크립트 -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyB11dj3UDHShGps65QdDtEb5cTEKBuONLI",
-    authDomain: "everydear-1c552.firebaseapp.com",
-    projectId: "everydear-1c552",
-    storageBucket: "everydear-1c552.firebasestorage.app",
-    messagingSenderId: "875515718386",
-    appId: "1:875515718386:web:e1cea297b9a66588503e6b",
-    measurementId: "G-0129RHHMWV"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyB11dj3UDHShGps65QdDtEb5cTEKBuONLI",
+      authDomain: "everydear-1c552.firebaseapp.com",
+      projectId: "everydear-1c552",
+      storageBucket: "everydear-1c552.firebasestorage.app",
+      messagingSenderId: "875515718386",
+      appId: "1:875515718386:web:e1cea297b9a66588503e6b",
+      measurementId: "G-0129RHHMWV"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
 
-  // 🔸 회원가입
-  window.signup = function() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert("회원가입 성공!");
-      })
-      .catch((error) => {
-        alert("회원가입 오류: " + error.message);
-      });
-  }
-
-  // 🔸 로그인
-  window.login = function() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert("로그인 성공!");
-      })
-      .catch((error) => {
-        alert("로그인 오류: " + error.message);
-      });
-  }
-</script>
+    // 🔸 로그인만 남김
+    window.login = function() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert("로그인 성공!");
+        })
+        .catch((error) => {
+          alert("로그인 오류: " + error.message);
+        });
+    };
+  </script>
 </body>
 </html>
