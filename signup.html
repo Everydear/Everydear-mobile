@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+    .form-container {
+      background: white; padding: 24px; max-width: 400px; margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;
+    }
+    .form-container input, select {
+      width: 100%; padding: 10px; margin: 10px 0;
+      border: 1px solid #ccc; border-radius: 6px;
+    }
+    .form-container button {
+      width: 100%; padding: 12px; background: #e94fb4; color: white;
+      border: none; border-radius: 6px; font-size: 16px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>회원가입</h2>
+    <input type="email" id="email" placeholder="이메일 주소" required />
+    <input type="password" id="password" placeholder="비밀번호 (6~20자)" required />
+    <input type="password" id="confirm" placeholder="비밀번호 확인" required />
+    <input type="text" id="name" placeholder="이름" required />
+    <input type="text" id="phone" placeholder="휴대폰 번호 (선택)" />
+    <input type="text" id="birth" placeholder="생년월일 예: 19900101" />
+    <button onclick="register()">가입 완료</button>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB11dj3UDHShGps65QdDtEb5cTEKBuONLI",
+      authDomain: "everydear-1c552.firebaseapp.com",
+      projectId: "everydear-1c552",
+      storageBucket: "everydear-1c552.firebasestorage.app",
+      messagingSenderId: "875515718386",
+      appId: "1:875515718386:web:e1cea297b9a66588503e6b",
+      measurementId: "G-0129RHHMWV"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.register = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+
+      if (password !== confirm) {
+        alert("비밀번호가 일치하지 않습니다.");
+        return;
+      }
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert("회원가입 성공!");
+          window.location.href = "index.html";
+        })
+        .catch((error) => {
+          alert("오류: " + error.message);
+        });
+    };
+  </script>
+</body>
+</html>
