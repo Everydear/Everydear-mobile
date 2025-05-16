@@ -5,18 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>회원가입</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
-    .form-container {
-      background: white; padding: 24px; max-width: 400px; margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
     }
-    .form-container input, select {
-      width: 100%; padding: 10px; margin: 10px 0;
-      border: 1px solid #ccc; border-radius: 6px;
+    .form-container {
+      background: white;
+      padding: 24px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
     .form-container button {
-      width: 100%; padding: 12px; background: #e94fb4; color: white;
-      border: none; border-radius: 6px; font-size: 16px; cursor: pointer;
+      width: 100%;
+      padding: 12px;
+      background: #e94fb4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -32,7 +49,6 @@
     <button onclick="register()">가입 완료</button>
   </div>
 
-  <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
@@ -60,12 +76,12 @@
       const phone = document.getElementById("phone").value.trim();
       const birth = document.getElementById("birth").value.trim();
 
-      if (!email.includes("@")) {
-        alert("올바른 이메일을 입력하세요.");
+      if (!email || !email.includes("@")) {
+        alert("유효한 이메일을 입력하세요.");
         return;
       }
-      if (password !== confirm) {
-        alert("비밀번호가 일치하지 않습니다.");
+      if (password.length < 6 || password !== confirm) {
+        alert("비밀번호가 유효하지 않거나 일치하지 않습니다.");
         return;
       }
 
@@ -73,7 +89,6 @@
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        // Firestore에 사용자 추가 정보 저장
         await setDoc(doc(db, "users", user.uid), {
           email,
           name,
