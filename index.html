@@ -11,10 +11,6 @@
         referrerpolicy="no-referrer" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- 🔹 Firebase SDK 추가 -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
-
   <style>
     :root {
       --primary: #84BD93;
@@ -64,15 +60,6 @@
       margin: 20px auto;
       display: block;
     }
-    .fade-img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 10px;
-      margin: 10px auto;
-      display: block; 
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
 
     .survey-btn {
       display: inline-block;
@@ -88,32 +75,6 @@
     }
     .survey-btn:hover {
       background: #333;
-    }
-
-    .auth-form {
-      margin-top: 40px;
-      text-align: center;
-    }
-    .auth-form input {
-      padding: 10px;
-      margin: 8px;
-      width: 80%;
-      max-width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .auth-form button {
-      margin: 8px;
-      padding: 10px 24px;
-      border: none;
-      background: var(--primary);
-      color: white;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .auth-form button:hover {
-      background: var(--accent);
     }
 
     footer {
@@ -136,20 +97,9 @@
     </a>
   </header>
 
-  <!-- 이미지 섹션 -->
   <section class="main-section">
     <img src="sero.png" alt="스크롤 이미지 1" class="main-img" />
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYpdKXeN2gXIkk8mLdQ3VJaJAiXR8XXYduqR9YEbuPMB5AUQ/viewform?usp=header" class="survey-btn">신청하기</a>
-    
-    <!-- 🔹 로그인/회원가입 폼 -->
-    <div class="auth-form">
-      <input type="email" id="email" placeholder="이메일" />
-      <br>
-      <input type="password" id="password" placeholder="비밀번호" />
-      <br>
-      <button onclick="location.href='signup.html'">회원가입</button>
-      <button onclick="login()">로그인</button>
-    </div>
   </section>
   
   <footer>
@@ -160,40 +110,6 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
-  </script>
-
-  <!-- 🔹 Firebase 로그인 전용 모듈 스크립트 -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyB11dj3UDHShGps65QdDtEb5cTEKBuONLI",
-      authDomain: "everydear-1c552.firebaseapp.com",
-      projectId: "everydear-1c552",
-      storageBucket: "everydear-1c552.firebasestorage.app",
-      messagingSenderId: "875515718386",
-      appId: "1:875515718386:web:e1cea297b9a66588503e6b",
-      measurementId: "G-0129RHHMWV"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const auth = getAuth(app);
-
-    // 🔸 로그인만 남김
-    window.login = function() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          alert("로그인 성공!");
-        })
-        .catch((error) => {
-          alert("로그인 오류: " + error.message);
-        });
-    };
   </script>
 </body>
 </html>
